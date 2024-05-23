@@ -1,0 +1,74 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+    <h2>Medicine Names Extracted</h2>
+    {% if medicines %}
+        <ul>
+        {% for medicine in medicines %}
+            <li>{{ medicine }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No medicines found.</p>
+    {% endif %}
+    <a href="/upload_image">Upload another image</a>
+</body>
+</html> -->
+
+<!-- templates/results.html -->
+<!-- results.html -->
+<!-- results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+            background-image: url('https://slidescorner.com/wp-content/uploads/2023/03/04-6-1024x576.jpg.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .search-container {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .search-container h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h2>Search for a Medicine</h2>
+        <form action="{{ url_for('search') }}" method="POST">
+            <input type="text" name="medicine_name" placeholder="Enter medicine name" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <h1>Extracted Medicines</h1>
+    <ul>
+        {% for medicine in medicines %}
+        <li><a href="{{ url_for('details', medicine_name=medicine.replace('/', '__SLASH__')|urlencode) }}">{{ medicine }}</a></li>
+        
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('upload_image') }}">Upload Another Image</a>
+</body>
+</html>
+
+

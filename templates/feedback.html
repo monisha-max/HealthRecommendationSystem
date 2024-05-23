@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://st.depositphotos.com/1907633/3138/i/950/depositphotos_31380901-stock-photo-abstract-metal-molecules-medical-background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding-top: 30px;
+        }
+
+        .home-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 10px;
+        }
+
+        .home-icon a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+        }
+
+        form {
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            text-align: center; /* Center the form content */
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .prescription-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 40px;
+            margin-top: 20px;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="home-icon">
+        <a href="{{ url_for('upload_image') }}"><i class="fas fa-home"></i></a>
+    </div>
+    
+    <h1>Feedback</h1>
+    <form method="POST">
+        <div class="prescription-box">
+            <label for="feedback">Your Feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="10" cols="50" required></textarea><br>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

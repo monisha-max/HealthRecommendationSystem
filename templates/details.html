@@ -1,0 +1,87 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medicine Details</title>
+    <style>
+        body {
+            background-color: #aad8ea;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: rgb(90, 117, 126);
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .navbar a {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            margin-top: 60px; /* some top margin to avoid content overlap with the navbar */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('profile') }}">My Profile</a>
+        <a href="{{ url_for('feedback') }}">Feedback</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    </div>
+
+    <div class="container">
+        <h1>Details for {{ medicine_name }}</h1>
+        <table>
+            <tr>
+                <th>Substitute</th>
+                <th>Side Effects</th>
+                <th>Therapeutic Class</th>
+                <th>Price (₹)</th>
+                <th>Composition</th>
+                <th>Buy Online</th>
+            </tr>
+            {% for i in range(5) %}
+            <tr>
+                <td>{{ details['substitute' + i|string] if details['substitute' + i|string] else 'N/A' }}</td>
+                <td>{{ details['sideEffect' + i|string] if details['sideEffect' + i|string] else 'N/A' }}</td>
+                {% if i == 0 %}
+                <td rowspan="5">{{ details['Therapeutic Class'] }}</td>
+                <td rowspan="5">{{ details['price(₹)'] }}</td>
+                <td rowspan="5">{{ details['short_composition1'] }}</td>
+                {% endif %}
+                <td>
+                    {% if details['substitute' + i|string] and details['substitute' + i|string] in urls %}
+                    <a href="{{ urls[details['substitute' + i|string]] }}">Buy</a>
+                    {% else %}
+                    N/A
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
+

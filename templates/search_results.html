@@ -1,0 +1,24 @@
+<!-- search_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            background-image: url('https://slidescorner.com/wp-content/uploads/2023/03/04-6-1024x576.jpg.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for medicine in medicines %}
+            <li><a href="{{ url_for('details', medicine_name=medicine) }}">{{ medicine }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+</head>
+<body>
+    <h2>Upload your prescription image</h2>
+    <form action="/upload_image" method="post" enctype="multipart/form-data">
+        <input type="file" name="image_file" accept="image/png, image/jpeg" required><br><br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+    <style>
+        body {
+            background-image: url("https://static.vecteezy.com/system/resources/previews/000/543/692/original/vector-medical-abstract-background-polygon-and-dot-line-graphic-design-element-blue-and-white-tone-for-modern-science-futuristic-wallpaper-cover-concept-digital-network-of-health-care-template-theme.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+       .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+       .navbar a {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+       .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+       .content {
+            position: absolute;
+            top: 25%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+        }
+
+       .prescription-scanner {
+            font-size: 75px;
+            font-weight: bold;
+            color: black;
+            text-shadow: 2px 2px 0 white, -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white;
+        }
+
+       .prescription-box {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            margin-top: 20px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+
+       .upload-text {
+            font-size: 24px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+       .choose-file-input {
+            margin-top: 10px;
+            color: black;
+        }
+
+       .upload-button {
+            padding: 11px 40px;
+            font-size: 22px;
+            background-color: #4e7ca2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+       .login-form {
+            float: right;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <!-- <a href="#">Contact Us</a> -->
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('feedback') }}">Feedback</a>
+        <a href="{{ url_for('profile') }}">My Profile</a>
+
+    </div>
+
+    <div class="content">
+        <div class="prescription-scanner">Prescription Scanner</div>
+        <div class="prescription-box">
+            <div class="upload-text">Please upload your prescription image. Kindly ensure that the image is cropped to include only the text containing the names of medicines</div>
+            <form action="/upload_image" method="post" enctype="multipart/form-data">
+                <input type="file" name="image_file" accept="image/png, image/jpeg" class="choose-file-input" required onchange="previewImage(event)"><br><br>
+                <input type="submit" value="Upload" class="upload-button">
+                <img id="imagePreview" src="#" alt="Image Preview" style="display:none; max-width: 200px;">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('imagePreview');
+                output.src = reader.result;
+                output.style.display = 'block';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+
+</body>
+</html>

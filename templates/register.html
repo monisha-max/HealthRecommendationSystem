@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form action="/register" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="/login">Login here</a></p>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Position the home icon in the top left corner */
+        .home-icon-container {
+            position: absolute;
+            top: 10px; /* Adjust */
+            left: 10px; /* Adjust */
+        }
+
+        /* Set background image */
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKAaK4Gnkyy-7GBc6fiL9unauaie29IHhfzANKZJjbt2QDf_2AhzwHTvw&s=10');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Style for the box */
+        .register-box {
+            background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px; /* adjust */
+            border: 2px solid black; /*black border */
+        }
+
+        /* Increase font size inside the box */
+        .register-box h2,
+        .register-box label,
+        .register-box input[type="text"],
+        .register-box input[type="password"],
+        .register-box input[type="submit"],
+        .register-box p {
+            font-size: 20px; /* font size  */
+        }
+
+        /* Style for home icon */
+        .home-icon-container a i {
+            font-size: 40px; /* adjust  */
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-box">
+        <h2>Register</h2>
+        <form action="/register" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a href="/login">Login here</a></p>
+    </div>
+    
+    <!-- Home Icon -->
+    <div class="home-icon-container">
+        <a href="upload.html"><i class="fas fa-home"></i></a>
+    </div>
+</body>
+</html>

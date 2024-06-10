@@ -1,4 +1,17 @@
 # HealthRecommendationSystem
+
+# Overview
+This project is a comprehensive web application designed to streamline the process of extracting and predicting medicine names from prescription images. It provides users with detailed information on substitute medicines, including side effects, purchase links, and prices. The application also supports user authentication and feedback collection.
+
+# Features
+- **User Authentication:**  Secure login and registration pages for personalized access.
+- **User Dashboard:** A dedicated space for users to manage and view all their prescriptions.
+- **Transcript Upload:** An easy-to-use page for uploading new prescription images.
+- **Medicine Information:** This section displays extracted medicines and provides one-click access to substitutes, side effects, purchase links, and prices.
+- **Feedback Form:** Collects user feedback to improve the application continuously.
+
+
+# Screenshots
 <img width="680" alt="Screenshot 2024-06-10 at 7 09 54 PM" src="https://github.com/monisha-max/HealthRecommendationSystem/assets/115718081/fd72874c-aefb-43b6-b1a9-d526135caa4c">
 
 <img width="675" alt="Screenshot 2024-06-10 at 7 17 19 PM" src="https://github.com/monisha-max/HealthRecommendationSystem/assets/115718081/8587db5d-feb3-49fc-87f8-691a10c4c149">
